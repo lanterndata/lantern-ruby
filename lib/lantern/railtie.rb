@@ -4,9 +4,8 @@ module Lantern
   class Railtie < Rails::Railtie
     railtie_name :lantern
 
-    # Include the generators
     generators do
-      require "lantern/generators/install_generator"
+      require 'generators/lantern/lantern_generator'
     end
   end
 end

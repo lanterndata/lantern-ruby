@@ -49,11 +49,11 @@ bundle exec rubocop -a
 Run all tests:
 
 ```bash
-bundle exec rspec
+bundle exec rake test
 ```
 
 Run a specific test:
 
 ```bash
-bundle exec rspec spec/path/to/test_spec.rb
+bundle exec rake test TEST=test/path/to/your_test_file.rb
 ```
