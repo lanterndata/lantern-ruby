@@ -1,7 +1,5 @@
 # Contributing to lantern-ruby
 
-# Lantern Ruby Clients
-
 ## Prerequisites
 
 * Ruby: Version 3.1 or higher
@@ -58,7 +56,16 @@ Run a specific test:
 bundle exec rake test TEST=test/path/to/your_test_file.rb
 ```
 
+## Release
+
+To release a new version, update the version number in `version.rb`, and then run:
+
+```bash
+bundle exec rake release
+```
+
 ## Roadmap
 
+* Support creating inline embeddings
 * Support creating vector indexes
 * Support creating embedding jobs
