@@ -30,12 +30,16 @@ jobs:
       with:
         ruby-version: ${{ matrix.ruby-version }}
         bundler-cache: true
+    - name: Set up database
+      run: |
+        DATABASE_NAME=db_$(echo "${{ matrix.ruby-version }}" | tr '.' '_')
+        PGPASSWORD=postgres psql -h localhost -U postgres -c "CREATE DATABASE $DATABASE_NAME"
     - name: Run tests
-      run: bundle exec rake test
+      run: |
+        DATABASE_NAME=db_$(echo "${{ matrix.ruby-version }}" | tr '.' '_')
+        export DATABASE_URL=postgresql://postgres:postgres@localhost:5432/$DATABASE_NAME
+        bundle exec rake test
     - name: Upload coverage to Codecov
-      uses: codecov/codecov-action@v3
+      uses: codecov/codecov-action@v4
       with:
         token: ${{ secrets.CODECOV_TOKEN }}
-        files: ./coverage/.resultset.json
-        flags: unittests
-        name: ruby-ci
