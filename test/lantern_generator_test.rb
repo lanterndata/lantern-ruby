@@ -2,7 +2,7 @@ require "test_helper"
 require "generators/lantern/lantern_generator"
 
 class LanternGeneratorTest < Rails::Generators::TestCase
-  tests Lantern::Generators::InstallGenerator
+  tests Lantern::Generators::LanternGenerator
   destination File.expand_path('../tmp', __dir__)
   setup :prepare_destination
 

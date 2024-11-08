@@ -57,3 +57,14 @@ Run a specific test:
 ```bash
 bundle exec rake test TEST=test/path/to/your_test_file.rb
 ```
+
+## Roadmap
+
+### In Progress
+
+* Support nearest neighbor queries
+
+### Future
+
+* Support creating vector indexes
+* Support creating embedding jobs
