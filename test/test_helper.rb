@@ -1,7 +1,5 @@
 require 'simplecov'
-SimpleCov.start do
-  add_filter '/test/'
-end
+SimpleCov.start
 
 require "bundler/setup"
 Bundler.require(:default)
