@@ -13,7 +13,8 @@ module Lantern
         vector_literal = vector.join(',')
         order_expression = "#{quoted_table_name}.#{connection.quote_column_name(attribute_name)} <-> ARRAY[#{vector_literal}]"
 
-        select("#{quoted_table_name}.*, #{order_expression} AS distance")
+        select_columns = select_values.any? ? [] : column_names
+        select(select_columns, "#{order_expression} AS distance")
           .where.not(attribute_name => nil)
           .order(Arel.sql(order_expression))
       }

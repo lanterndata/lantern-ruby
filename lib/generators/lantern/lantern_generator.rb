@@ -8,7 +8,7 @@ module Lantern
       source_root File.join(__dir__, 'templates')
 
       def copy_migration
-        migration_template 'lantern.rb', 'db/migrate/install_lantern.rb', migration_version: migration_version
+        migration_template 'lantern.rb.tt', 'db/migrate/install_lantern.rb', migration_version: migration_version
       end
 
       private
