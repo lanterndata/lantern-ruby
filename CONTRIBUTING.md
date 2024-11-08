@@ -66,6 +66,12 @@ bundle exec rake release
 
 ## Roadmap
 
+### In Progress
+
 * Support creating inline embeddings
+
+### Future
+
+* Support using text to perform vector search with inline embeddings
 * Support creating vector indexes
 * Support creating embedding jobs
