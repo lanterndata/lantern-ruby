@@ -4,7 +4,6 @@ PATH
     lantern (0.0.0)
       activerecord (>= 7.0)
       activesupport (>= 7.0)
-      rails (>= 7.0)
 
 GEM
   remote: https://rubygems.org/
@@ -226,6 +225,7 @@ DEPENDENCIES
   lantern!
   minitest (>= 5.14)
   pg (>= 1.2)
+  rails (>= 7.0)
   railties (>= 7.0)
   rake (>= 13.0)
   rubocop (>= 1.0)
