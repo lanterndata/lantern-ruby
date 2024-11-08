@@ -14,11 +14,15 @@ gem 'lantern'
 
 And then execute:
 
-    $ bundle
+```bash
+bundle
+```
 
 Or install it yourself as:
 
-    $ gem install lantern
+```bash
+gem install lantern
+```
 
 ## Usage
 
