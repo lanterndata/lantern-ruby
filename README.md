@@ -7,7 +7,7 @@ No Ruby client is required for `pg` or `Sequel`. For `ActiveRecord` and `Rails`,
 ## Features
 
 - Perform nearest neighbor queries over vectors
-- Create text embeddings using open-source models
+- Create text embeddings using OpenAI, Cophere, and open-source models
 
 ## Installation
 
@@ -57,8 +57,13 @@ Supported distance metrics:
 ### Embedding generation
 
 ```ruby
-# Generate embeddings using a specific model
-embedding = Lantern.generate_embedding('BAAI/bge-base-en', 'Your text here')
+embedding1 = Lantern.text_embedding('BAAI/bge-base-en', 'Your text here')
+
+Lantern.set_api_token(openai_token: 'your_openai_token')
+embedding2 = Lantern.openai_embedding('text-embedding-3-small', 'Hello')
+
+Lantern.set_api_token(cohere_token: 'your_cohere_token')
+embedding3 = Lantern.cohere_embedding('embed-english-v3.0', 'Hello')
 ```
 
 A full list of supported models can be found [here](lantern.dev/docs/develop/generate).

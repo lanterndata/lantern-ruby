@@ -22,10 +22,12 @@
     bundle install
     ```
 
-3. Set DB_URL in environment or in `.env` file.
+3. Set the environment variables in a `.env` file or in the environment.
 
     ```bash
-    export DATABASE_URL=postgresql://user:password@localhost:5432/lantern
+    DATABASE_URL= # Required
+    COHERE_TOKEN=
+    OPENAI_TOKEN=
     ```
 
 ## Style guide
@@ -66,13 +68,6 @@ bundle exec rake release
 
 ## Roadmap
 
-### In Progress
-
-* Support creating inline text embeddings
-
-### Future
-
-* Support creating inline OpenAI embeddings (requires token)
 * Support using text to perform vector search with inline embeddings
 * Support creating vector indexes
 * Support creating embedding jobs
