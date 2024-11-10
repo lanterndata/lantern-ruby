@@ -68,10 +68,11 @@ bundle exec rake release
 
 ### In Progress
 
-* Support creating inline embeddings
+* Support creating inline text embeddings
 
 ### Future
 
+* Support creating inline OpenAI embeddings (requires token)
 * Support using text to perform vector search with inline embeddings
 * Support creating vector indexes
 * Support creating embedding jobs
