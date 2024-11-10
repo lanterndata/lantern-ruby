@@ -31,13 +31,23 @@ gem install lantern
 
 ## ActiveRecord
 
+### Connect to the database
+
+```ruby
+require 'active_record'
+require 'lantern'
+ActiveRecord::Base.establish_connection("DATABASE_URL")
+ActiveRecord::Base.connection.enable_extension("lantern")
+conn = ActiveRecord::Base.connection
+```
+
 ### Create a model
 
 ```ruby
 ActiveRecord::Migration.create_table :movies do |t|
   t.column :movie_embedding, :real, array: true
 end
-@conn.execute("INSERT INTO movies (movie_embedding) VALUES ('{0,1,0}'), ('{3,2,4}')")
+conn.execute("INSERT INTO movies (movie_embedding) VALUES ('{0,1,0}'), ('{3,2,4}')")
 ```
 
 ### Embedding generation

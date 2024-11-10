@@ -9,6 +9,20 @@ on:
       - main
 
 jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out code
+        uses: actions/checkout@v4
+      - name: Set up Ruby
+        uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: '3.2'
+          bundler-cache: true
+      - name: Build gem
+        run: bundle exec rake build
+      - name: Install gem
+        run: gem install pkg/*.gem
   test:
     runs-on: ubuntu-latest
     strategy:

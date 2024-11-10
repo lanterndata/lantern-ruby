@@ -22,9 +22,9 @@ Gem::Specification.new do |spec|
   spec.required_ruby_version = ">= 3.1"
   spec.add_dependency 'activerecord', '>= 7.0'
   spec.add_dependency 'activesupport', '>= 7.0'
+  spec.add_dependency 'pg', '>= 1.2'
   spec.add_development_dependency 'dotenv', '>= 2.7'
   spec.add_development_dependency 'minitest', '>= 5.14'
-  spec.add_development_dependency 'pg', '>= 1.2'
   spec.add_development_dependency 'rake', '>= 13.0'
   spec.add_development_dependency 'rubocop', '>= 1.0'
   spec.add_development_dependency 'railties', '>= 7.0'

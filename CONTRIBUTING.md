@@ -58,6 +58,14 @@ Run a specific test:
 bundle exec rake test TEST=test/path/to/your_test_file.rb
 ```
 
+## Building the gem
+
+To build the gem:
+
+```bash
+bundle exec rake build
+```
+
 ## Release
 
 To release a new version, update the version number in `version.rb`, and then run:

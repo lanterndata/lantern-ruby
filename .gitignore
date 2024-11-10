@@ -11,3 +11,4 @@
 .env
 print_files.py
 temp.md
+*.gem
