@@ -6,7 +6,7 @@ No Ruby client is required for `pg` or `Sequel`. For `ActiveRecord` and `Rails`,
 
 ## Features
 
-- Perform nearest neighbor queries over vectors
+- Perform nearest neighbor queries over vectors using vectors or text
 - Create text embeddings using OpenAI, Cophere, and open-source models
 
 ## Installation
@@ -33,26 +33,40 @@ gem install lantern
 
 ### Vector search
 
-The Lantern gem integrates with ActiveRecord to provide vector similarity search capabilities:
-
-```ruby
-class Document < ApplicationRecord
-  # Enable vector similarity search for one or more columns
-  has_neighbors :embedding
-end
-
-# Class-level nearest-neighbor search: find nearest neighbors for a given vector
-Document.nearest_neighbors(:embedding, vector, distance: 'l2')
-
-# Instance-level nearest-neighbor search: find nearest neighbors for a given instance
-document = Document.first
-document.nearest_neighbors(:embedding, distance: 'l2')
-```
-
-Supported distance metrics:
+This gem provides several ways to perform vector search. We support the following distance metrics:
 
 - `l2` (Euclidean distance)
 - `cosine` (Cosine similarity)
+
+Using pre-computed vectors:
+
+```ruby
+class Document < ApplicationRecord
+  has_neighbors :embedding
+end
+
+# Find 5 nearest neighbors using L2 distance 
+Document.nearest_neighbors(:embedding, [0.1, 0.2, 0.3], distance: 'l2').limit(5)
+
+# Given a document, find 5 nearest neighbors using cosine distance
+document = Document.first
+document.nearest_neighbors(:embedding, distance: 'cosine').limit(5)
+```
+
+Using text:
+
+```ruby
+class Book < ApplicationRecord
+  has_neighbors :embedding
+end
+
+# Find 5 nearest neighbors using open-source model
+Book.nearest_neighbors(:embedding, 'The quick brown fox', model: 'BAAI/bge-small-en', distance: 'l2').limit(5)
+
+# Find 5 nearest neighbors using OpenAI
+Lantern.set_api_token(openai_token: 'your_openai_token')
+Book.nearest_neighbors(:embedding, 'The quick brown fox', model: 'openai/text-embedding-3-small', distance: 'cosine').limit(5)
+```
 
 ### Embedding generation
 

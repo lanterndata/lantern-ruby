@@ -4,7 +4,7 @@ class Item < ActiveRecord::Base
   has_neighbors :embedding
 end
 
-class LanternTest < Minitest::Test
+class LanternModelVectorTest < Minitest::Test
   def setup
     @conn = ActiveRecord::Base.connection
 
