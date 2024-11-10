@@ -65,8 +65,3 @@ To release a new version, update the version number in `version.rb`, and then ru
 ```bash
 bundle exec rake release
 ```
-
-## Roadmap
-
-* Support creating vector indexes
-* Support creating embedding jobs
