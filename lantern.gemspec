@@ -1,7 +1,7 @@
 require_relative 'lib/lantern/version'
 
 Gem::Specification.new do |spec|
-  spec.name          = 'lantern'
+  spec.name          = 'lanterndb'
   spec.version       = Lantern::VERSION
   spec.author       =  'Di Qi'
   spec.email         = 'support@lantern.dev'

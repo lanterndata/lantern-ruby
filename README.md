@@ -14,7 +14,7 @@ No Ruby client is required for `pg` or `Sequel`. For `ActiveRecord` and `Rails`,
 Add this line to your application's Gemfile:
 
 ```ruby
-gem 'lantern'
+gem 'lanterndb'
 ```
 
 And then execute:
@@ -26,7 +26,7 @@ bundle install
 Or install it yourself as:
 
 ```bash
-gem install lantern
+gem install lanterndb
 ```
 
 ## ActiveRecord
